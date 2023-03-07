@@ -2,7 +2,7 @@
 For this project, we are cracking the password of an account on a website
 
 # Dependencies
-This project uses the python programming language, with the imports: request, argv, and Path
+This project uses the python programming language, with the imports: requests, argv, and Path
 
 # Commandline Arguments
 After putting directory to the python file in terminal, write:
