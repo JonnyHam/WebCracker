@@ -80,5 +80,5 @@ with open(wordlist) as thefile:
             isLoggedIn = True
             exit()
     if not isLoggedIn:
-        print("Couldn't log in with username")
+        print("Couldn't log in with username and/or wordlist")
 
