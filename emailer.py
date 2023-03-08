@@ -1,5 +1,6 @@
 import smtplib, ssl
 
+sender_email = "pythonwebcracker@gmail.com"
 
 def emailer(email):
     port = 465  # For SSL
